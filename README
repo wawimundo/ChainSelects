@@ -1,0 +1,102 @@
+ChainSelects
+============
+
+Let's say you are developing an application for a car dealer. Assuming that the car dealer sells many types of cars from different manufacturers. Each car manufacturer has many types of brands. For each brand, there are many models. The big question is: how do you deal with the interface for the user for this kind of hierarchical content?
+
+Chain selects can provide an intuitive interface for this kind of problem. Chain or dependent selects are html drop-down select boxes that are linked to each other. On the examples below, let's say you selected Toyota as manufacturer, brands under Toyota will automatically be displayed on the second drop-down. Selecting a particular brand will then display the models on the third drop-down for a particular brand.
+
+ChainSelects makes it easier for you to generate these drop-down boxes. Install, configure, run and you're done! Fully working AJAX-based chained select boxes with minimal work.
+
+
+Example
+=======
+
+a. Simple
+chain_select_ajax(:models => [:manufacturer, :brand, :make_model])
+
+b. Values Specified
+
+chain_select_ajax(:models => [:manufacturer, :brand, :make_model], :spacer => ‘|’, :values => {:manufacturer => 2, :brand => 4, :make_model => 3}, :prefix => ‘chain_select_two’)
+
+c. Separate Rendering
+
+chain_select_stand_alone(:manufacturer, :prefix => ‘chain_select_three’, :value => 2)
+
+chain_select_stand_alone(:brand, :prefix => ‘chain_select_three’, :value => 4, :parent => 2)
+
+chain_select_stand_alone(:make_model, :prefix => ‘chain_select_three’, :value => 3, :parent => 4)
+
+chain_select_indicator_stand_alone(‘chain_select_three’)
+
+Please see http://chainselects.hypermediasoft.com/ for live examples.
+
+Installation
+=======
+
+1. Install
+
+./script/plugin install http://github.com/diwadm/ChainSelects
+./script/generate chain_selects_route
+
+2. Configure your models
+
+class Manufacturer < ActiveRecord::Base
+  has_many :brands, :dependent => :destroy
+  validates_presence_of :name
+
+  acts_as_chainable :to => :brand, :root => true, :order => ‘name ASC’
+end
+
+class Brand < ActiveRecord::Base
+  belongs_to :manufacturer
+  validates_presence_of :name
+
+  has_many :make_models, :dependent => :destroy
+
+  acts_as_chainable :to => :make_model, :from => :manufacturer, :order => ‘name ASC’
+end
+
+class MakeModel < ActiveRecord::Base
+  belongs_to :brand
+  validates_presence_of :name
+
+  acts_as_chainable :select_label => ‘Model’, :from => :brand
+end
+
+3. Render
+
+chain_select_ajax(:models => [:manufacturer, :brand, :make_model])
+
+Parameters and Options
+=======
+
+chain_select_ajax(options = {})
+    * :prefix - Prefix is the name of a set of chain selects. You can have multiple chain-selects - just like in the examples above - which accesses the same set of models. Prefix is important as it is used to differentiate the html elements.
+    * :models - Array which contains the models for the chained select. The order in which the drop-downs are rendered depends on the way you specified them.
+    * :spacer - Text or code that will be rendered between two drop-downs.
+    * :disable_ajax_indicator - Set to true if you don't want the AJAX spinner indicator.
+    * :values - You can set the values that are selected when the page is loaded. Example:
+
+      :values => {:manufacturer => 2, :brand => 4, :make_model => 3}
+
+      Note that you could not skip the value for a model that has a child.
+
+chain_select_stand_alone(model_name, options = {})
+    * model_name - Name of the model.
+    * options[:prefix] - Name of the chain select set where the models belongs. Make sure you have the same prefix for all the models that you are rendering separately.
+    * options[:value] - Value selected.
+    * options[:parent] - Value selected for the model's parent. You need to specify both the :parent and :value.
+
+acts_as_chainable(options = {})
+    * :to - Name of the model's child.
+    * :root - Set to true if the model is the top of the hierarchy.
+    * :from - Name of the model's parent. Not applicable for root model.
+    * :select_label - First option that will appear in the model's drop-down. Default is "--[model name]--".
+    * :order - Ordering of the data. Same option from ActiveRecord::Base.
+    * :limit - Limits the number of rows of data. Same option from ActiveRecord::Base.
+    * :conditions - Conditions for the model. Same option from ActiveRecord::Base.
+
+
+Copyright and Author
+=======
+Copyright (c) 2010 Diwa del Mundo, released under the MIT license

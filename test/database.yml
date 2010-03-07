@@ -1,0 +1,21 @@
+sqlite:
+  :adapter: sqlite
+  :database: vendor/plugins/chain_selects/test/chain_selects_plugin.sqlite.db
+
+sqlite3:
+  :adapter: sqlite3
+  :database: vendor/plugins/chain_selects/test/chain_selects_plugin.sqlite3.db
+
+postgresql:
+  :adapter: postgresql
+  :username: postgres
+  :password: postgres
+  :database: chain_selects_plugin_test
+  :min_messages: ERROR
+
+mysql:
+  :adapter: mysql
+  :host: localhost
+  :username: root
+  :password: root
+  :database: chain_selects_plugin_test

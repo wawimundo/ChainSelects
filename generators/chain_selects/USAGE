@@ -1,0 +1,8 @@
+Description:
+    ChainSelects allows you to easily create chained selects in Rails. Chain or dependent selects are basically drop-down select boxes that have content dependent to each other. As an example, let's say you are building an app for a client that sells cars. Assuming that your client, 
+
+Example:
+    ./script/generate chain_selects Thing
+
+    This will create:
+        what/will/it/create

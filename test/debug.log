@@ -1,0 +1,2907 @@
+# Logfile created on Sun Mar 07 23:36:35 +0800 2010 by /
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (87.0ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (26.4ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: table "brands" already exists: CREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: table "brands" already exists: CREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (34.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (18.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (527.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: table "brands" already exists: CREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (22.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (19.4ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mYaffleTest::Manufacturer Load (0.3ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mYaffleTest::Brand Load (0.3ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mYaffleTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (44.4ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (163.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (296.8ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (28.6ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (29.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (38.7ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (22.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (14.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (102.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (18.7ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mYaffleTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mYaffleTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mYaffleTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (71.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.9ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (59.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mYaffleTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mYaffleTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mYaffleTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (67.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mYaffleTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mYaffleTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mYaffleTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (5.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.2ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (18.7ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.3ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.2ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (11.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (33.5ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (15.8ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (197.7ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (210.8ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (192.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (21.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (36.5ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mManufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;35;1mChainSelectsTest::Manufacturer Load (0.1ms)[0m   [0mSELECT * FROM "manufacturers" [0m
+  [4;36;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0;1mSELECT * FROM "brands" [0m
+  [4;35;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:33:14', '2010-03-07 17:33:14')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.1ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (13.7ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:37:39', '2010-03-07 17:37:39')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.1ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:38:12', '2010-03-07 17:38:12')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.3ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.1ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:39:09', '2010-03-07 17:39:09')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:42:49', '2010-03-07 17:42:49')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.1ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.3ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:43:41', '2010-03-07 17:43:41')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mManufacturer Create (0.4ms)[0m   [0mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:43:41', '2010-03-07 17:43:41')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mManufacturer Load (0.3ms)[0m   [0;1mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;35;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" [0m
+  [4;36;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0;1mSELECT * FROM "brands" [0m
+  [4;35;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:44:16', '2010-03-07 17:44:16')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mManufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;35;1mChainSelectsTest::Manufacturer Load (0.1ms)[0m   [0mSELECT * FROM "manufacturers" [0m
+  [4;36;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0;1mSELECT * FROM "brands" [0m
+  [4;35;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:44:38', '2010-03-07 17:44:38')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (29.5ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mManufacturer Create (0.3ms)[0m   [0mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:44:38', '2010-03-07 17:44:38')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mManufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;35;1mChainSelectsTest::Manufacturer Load (0.1ms)[0m   [0mSELECT * FROM "manufacturers" [0m
+  [4;36;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0;1mSELECT * FROM "brands" [0m
+  [4;35;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:44:56', '2010-03-07 17:44:56')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Create (0.4ms)[0m   [0mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Honda', '2010-03-07 17:44:56', '2010-03-07 17:44:56')[0m
+  [4;36;1mManufacturer Create (0.2ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:44:56', '2010-03-07 17:44:56')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.1ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:46:49', '2010-03-07 17:46:49')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:47:15', '2010-03-07 17:47:15')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.1ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:48:52', '2010-03-07 17:48:52')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.2ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:49:29', '2010-03-07 17:49:29')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:51:17', '2010-03-07 17:51:17')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mManufacturer Load (0.3ms)[0m   [0mSELECT * FROM "manufacturers" WHERE ("manufacturers"."id" = 2) [0m
+  [4;36;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0;1mSELECT * FROM "manufacturers" [0m
+  [4;35;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0mSELECT * FROM "brands" [0m
+  [4;36;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0;1mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.4ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:52:03', '2010-03-07 17:52:03')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" [0m
+  [4;36;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0;1mSELECT * FROM "brands" [0m
+  [4;35;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0mSELECT * FROM "make_models" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDROP TABLE "manufacturers"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "brands"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE "make_models"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mManufacturer Create (0.6ms)[0m   [0;1mINSERT INTO "manufacturers" ("name", "created_at", "updated_at") VALUES('Toyota', '2010-03-07 17:54:56', '2010-03-07 17:54:56')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mDROP TABLE "manufacturers"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "manufacturers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE "brands"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "manufacturer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mDROP TABLE "make_models"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "make_models" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "brand_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mChainSelectsTest::Manufacturer Load (0.2ms)[0m   [0mSELECT * FROM "manufacturers" [0m
+  [4;36;1mChainSelectsTest::Brand Load (0.1ms)[0m   [0;1mSELECT * FROM "brands" [0m
+  [4;35;1mChainSelectsTest::MakeModel Load (0.1ms)[0m   [0mSELECT * FROM "make_models" [0m
