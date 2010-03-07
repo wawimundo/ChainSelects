@@ -1,4 +1,4 @@
-ENV['RAILS_ROOT'] ||= File.dirname(__FILE__) + '/../../..'
+ENV['RAILS_ROOT'] ||= File.dirname(__FILE__) + '/../../../'
 require File.expand_path(File.join(ENV['RAILS_ROOT'], 'config/environment.rb'))
 
 # Taken from ActiveScaffold's install_assets.rb

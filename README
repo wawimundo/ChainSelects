@@ -65,7 +65,13 @@ end
 
 3. Render
 
+In your controller:
+include ChainSelectsHelper
+
+In your view:
 chain_select_ajax(:models => [:manufacturer, :brand, :make_model])
+
+Done!
 
 Parameters and Options
 =======

@@ -55,7 +55,7 @@ class ChainSelectsController < ApplicationController
       
       hide_child_elements(page, @child_model.chain_select_child)
       page[@child_div_id].update(chain_select_options_data(@child_select_data))
-      page['indicator_for_chain_select_two_global'].hide
+      page[chain_select_indicator_name('global', @prefix)].hide
     end
   end
 end
