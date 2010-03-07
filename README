@@ -16,17 +16,17 @@ chain_select_ajax(:models => [:manufacturer, :brand, :make_model])
 
 b. Values Specified
 
-chain_select_ajax(:models => [:manufacturer, :brand, :make_model], :spacer => ‘|’, :values => {:manufacturer => 2, :brand => 4, :make_model => 3}, :prefix => ‘chain_select_two’)
+chain_select_ajax(:models => [:manufacturer, :brand, :make_model], :spacer => '|', :values => {:manufacturer => 2, :brand => 4, :make_model => 3}, :prefix => 'chain_select_two')
 
 c. Separate Rendering
 
-chain_select_stand_alone(:manufacturer, :prefix => ‘chain_select_three’, :value => 2)
+chain_select_stand_alone(:manufacturer, :prefix => 'chain_select_three', :value => 2)
 
-chain_select_stand_alone(:brand, :prefix => ‘chain_select_three’, :value => 4, :parent => 2)
+chain_select_stand_alone(:brand, :prefix => 'chain_select_three', :value => 4, :parent => 2)
 
-chain_select_stand_alone(:make_model, :prefix => ‘chain_select_three’, :value => 3, :parent => 4)
+chain_select_stand_alone(:make_model, :prefix => 'chain_select_three', :value => 3, :parent => 4)
 
-chain_select_indicator_stand_alone(‘chain_select_three’)
+chain_select_indicator_stand_alone('chain_select_three')
 
 Please see http://chainselects.hypermediasoft.com/ for live examples.
 
@@ -35,7 +35,7 @@ Installation
 
 1. Install
 
-./script/plugin install http://github.com/diwadm/ChainSelects
+./script/plugin install git://github.com/diwadm/ChainSelects.git
 ./script/generate chain_selects_route
 
 2. Configure your models
@@ -44,7 +44,7 @@ class Manufacturer < ActiveRecord::Base
   has_many :brands, :dependent => :destroy
   validates_presence_of :name
 
-  acts_as_chainable :to => :brand, :root => true, :order => ‘name ASC’
+  acts_as_chainable :to => :brand, :root => true
 end
 
 class Brand < ActiveRecord::Base
@@ -53,23 +53,41 @@ class Brand < ActiveRecord::Base
 
   has_many :make_models, :dependent => :destroy
 
-  acts_as_chainable :to => :make_model, :from => :manufacturer, :order => ‘name ASC’
+  acts_as_chainable :to => :make_model, :from => :manufacturer
 end
 
 class MakeModel < ActiveRecord::Base
   belongs_to :brand
   validates_presence_of :name
 
-  acts_as_chainable :select_label => ‘Model’, :from => :brand
+  acts_as_chainable :select_label => 'Model', :from => :brand
 end
 
 3. Render
 
 In your controller:
+
 include ChainSelectsHelper
 
+# sample controller
+class DemoController < ApplicationController
+  layout 'public'
+  
+  def index
+    
+  end
+end
+
 In your view:
-chain_select_ajax(:models => [:manufacturer, :brand, :make_model])
+
+<html>
+<head>
+<%= javascript_include_tag :defaults %>
+</head>
+<body>
+<%= chain_select_ajax(:models => [:manufacturer, :brand, :make_model]) %>
+</body>
+</html>
 
 Done!
 
