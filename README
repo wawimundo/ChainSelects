@@ -83,6 +83,7 @@ In your view:
 <html>
 <head>
 <%= javascript_include_tag :defaults %>
+<%= stylesheet_link_tag 'chain_selects' %>
 </head>
 <body>
 <%= chain_select_ajax(:models => [:manufacturer, :brand, :make_model]) %>
