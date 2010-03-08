@@ -40,6 +40,8 @@ Installation
 
 2. Configure your models
 
+Note: models need to have a name method, as the text in the drop-downs will come from this.
+
 class Manufacturer < ActiveRecord::Base
   has_many :brands, :dependent => :destroy
   validates_presence_of :name
