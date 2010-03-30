@@ -127,3 +127,7 @@ acts_as_chainable(options = {})
 Copyright and Author
 =======
 Copyright (c) 2010 Diwa del Mundo, released under the MIT license
+
+Credits
+=======
+Peter Berkenbosch - bug fix

@@ -70,7 +70,8 @@ module ChainSelects
       order = self.chain_select_order
       order = ar_model.send(:primary_key).to_s unless self.chain_select_order
       
-      conditions = (self.chain_select_conditions or ['1'])
+      # set the model's conditions to the user-specified condition or set to default
+      conditions = (self.chain_select_conditions or ['?', true])
       
       # user can disable the -- Select -- text that is displayed
       # at the first row of the drop-down
