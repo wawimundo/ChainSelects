@@ -70,9 +70,6 @@ module ChainSelects
       order = self.chain_select_order
       order = ar_model.send(:primary_key).to_s unless self.chain_select_order
       
-      # set the model's conditions to the user-specified condition or set to default
-      conditions = (self.chain_select_conditions or ['?', true])
-      
       # user can disable the -- Select -- text that is displayed
       # at the first row of the drop-down
       unless options[:disable_select_txt]
@@ -83,7 +80,7 @@ module ChainSelects
       # fills the items array with the children of the parent
       if options[:class_name]
         find_options = {}
-        find_options[:conditions] = conditions
+        find_options[:conditions] = self.chain_select_conditions if self.chain_select_conditions
         find_options[:order] = self.chain_select_order.to_s if self.chain_select_order
         find_options[:limit] = self.chain_select_limit.to_s if self.chain_select_limit
         
