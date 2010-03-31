@@ -150,7 +150,7 @@ module ChainSelectsHelper
   def chain_select_options(model_name, prefix)
     indicator_id = chain_select_indicator_name('global', prefix)
     
-    {:onchange => "new Ajax.Request('/chain_selects/query/' + this.value + '?parent=#{model_name}&prefix=#{prefix}', {asynchronous:true, evalScripts:true,onLoading:function(request){$('#{indicator_id}').show()},onComplete:function(request){$('#{indicator_id}').hide()}}); return false;", :class => 'chain_select_boxes'}
+    {:onchange => "new Ajax.Request('/chain_selects/query/' + this.value + '?parent=#{model_name}&prefix=#{prefix}&authenticity_token=#{form_authenticity_token}', {asynchronous:true, evalScripts:true,onLoading:function(request){$('#{indicator_id}').show()},onComplete:function(request){$('#{indicator_id}').hide()}}); return false;", :class => 'chain_select_boxes'}
   end
   # 
   # converts a symbol of string to a constant
