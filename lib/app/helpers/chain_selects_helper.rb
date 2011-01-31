@@ -15,6 +15,14 @@ module ChainSelectsHelper
         # don't add the spacer on the last drop-down
         spacer = '' if options[:models].last == model_name
         
+        # user specified something to do for the last drop-down's onchange event
+        if block_given?
+          ar_model = constantize_model(model_name)
+          unless ar_model.can_chain_child?
+            options[:onchange] = render(:update) { |page| yield(page) }
+          end
+        end
+        
         html += (chain_select_for_model(model_name, prefix, options) + spacer)
       end
     end
@@ -95,6 +103,10 @@ module ChainSelectsHelper
     # model is not a chain for anything, i.e. last drop-down
     unless ar_model.can_chain_child?
       select_options[:onchange] = nil
+      
+      if options[:onchange]
+        select_options[:onchange] = options[:onchange]
+      end
     end
     
     select_options[:name] = chain_select_form_name(model_name, prefix)
