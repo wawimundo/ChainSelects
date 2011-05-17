@@ -1,4 +1,5 @@
 class ChainSelectsController < ApplicationController
+  include ChainSelectsHelper
   # Returns the children of a model as a set of <option> tags.
   # This method is basically used by the ajax calls when the user
   # invokes the onchange event of a particular drop-down box.
